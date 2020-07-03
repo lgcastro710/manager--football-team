@@ -9,8 +9,10 @@ const App = () => (
     <Provider store={store}>
         <main>
             <h1>Molino F.C</h1>
-            <Players />
-            <SelectedTeam />
+            <div className="content-players-cancha">
+                <Players />
+                <SelectedTeam />
+            </div>
         </main>
     </Provider>
 )

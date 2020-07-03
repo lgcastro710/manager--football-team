@@ -4,7 +4,7 @@ import Alternates from './Alternates';
 
 const SelectedTeam = () => {
     return (
-        <section>
+        <section class="cancha-players">
             <Headlines />
             <Alternates />
         </section>

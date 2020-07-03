@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 const Players = ({ players, addPlayer, addAlternate }) => {
     return (
-        <section>
+        <section class="list-players">
             <h2>Jugadores</h2>
             <div className="contenedor-jugadores">
                 {

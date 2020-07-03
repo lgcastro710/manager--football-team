@@ -118,7 +118,16 @@
     }
   
   }
-  
+  .content-players-cancha{
+    width: 100%;
+    display: flex;
+  }
+  .list-players{
+    width: 25%;
+  }
+  .cancha-players{
+    width: 75%;
+  }
   //----- Titular -----//
   .titular{
     display: flex;
