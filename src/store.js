@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
 
 const initialState = {
-    jugadores: [
+    players: [
         {
             id: 6,
             nombre: "Thibaut Courtois",
@@ -69,42 +69,42 @@ const initialState = {
         },
 
     ],
-    titulares: [],
-    suplentes: []
+    headlines: [],
+    alternates: []
 }
 
-const reducerEntrenador = (state = initialState, action) => {
+const reducerManager = (state = initialState, action) => {
 
-    if (action.type === "AGREGAR_TITULAR") {
+    if (action.type === "ADD_HEADLINE") {
         return {
             ...state,
-            titulares: state.titulares.concat(action.jugador),
-            jugadores: state.jugadores.filter(jugador => jugador.id !== action.jugador.id)
+            headlines: state.headlines.concat(action.player),
+            players: state.players.filter(player => player.id !== action.player.id)
         }
     }
-    if (action.type === "AGREGAR_SUPLENTE") {
+    if (action.type === "ADD_ALTERNATE") {
         return {
             ...state,
-            suplentes: state.suplentes.concat(action.jugador),
-            jugadores: state.jugadores.filter(jugador => jugador.id !== action.jugador.id)
+            alternates: state.alternates.concat(action.player),
+            players: state.players.filter(player => player.id !== action.player.id)
         }
     }
-    if (action.type === "QUITAR_TITULAR") {
+    if (action.type === "REMOVE_HEADLINE") {
         return {
             ...state,
-            titulares: state.titulares.filter(jugador => jugador.id !== action.jugador.id),
-            jugadores: state.jugadores.concat(action.jugador),
+            headlines: state.headlines.filter(player => player.id !== action.player.id),
+            players: state.players.concat(action.player),
 
         }
     }
-    if (action.type === "QUITAR_SUPLENTE") {
+    if (action.type === "REMOVE_ALTERNATE") {
         return {
             ...state,
-            suplentes: state.suplentes.filter(jugador => jugador.id !== action.jugador.id),
-            jugadores: state.jugadores.concat(action.jugador),
+            alternates: state.alternates.filter(player => player.id !== action.player.id),
+            players: state.players.concat(action.player),
 
         }
     }
     return state
 }
-export default createStore(reducerEntrenador);
+export default createStore(reducerManager);

@@ -1,16 +1,16 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import store from './store';
-import Jugadores from './components/Jugadores';
-import EquipoSeleccionado from './components/EquipoSeleccionado';
+import Players from './components/Players';
+import SelectedTeam from './components/SelectedTeam';
 import "./styles/styles.scss"
 
 const App = () => (
     <Provider store={store}>
         <main>
             <h1>Molino F.C</h1>
-            <Jugadores />
-            <EquipoSeleccionado />
+            <Players />
+            <SelectedTeam />
         </main>
     </Provider>
 )

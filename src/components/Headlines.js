@@ -1,19 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import cancha from '../cancha.svg';
-const Titulares = ({ titulares, quitarTitular }) => {
+const Headlines = ({ headlines, removeHeadline }) => {
     return (
         <section>
             <h2>Titulares</h2>
             <div className="cancha">
                 {
-                    titulares.map(jugador => (
-                        <article className="titular" key={jugador.id}>
+                    headlines.map(player => (
+                        <article className="titular" key={player.id}>
                             <div>
-                                <img src={jugador.foto} alt={jugador.nombre} />
-                                <button onClick={() => quitarTitular(jugador)}>X</button>
+                                <img src={player.foto} alt={player.nombre} />
+                                <button onClick={() => removeHeadline(player)}>X</button>
                             </div>
-                            <p>{jugador.nombre}</p>
+                            <p>{player.nombre}</p>
                         </article>
                     ))
                 }
@@ -24,15 +24,15 @@ const Titulares = ({ titulares, quitarTitular }) => {
 };
 
 const mapStateToProps = state => ({
-    titulares: state.titulares,
+    headlines: state.headlines,
 });
 const mapDispatchToProps = dispatch => ({
-    quitarTitular(jugador) {
+    removeHeadline(player) {
         dispatch({
-            type: "QUITAR_TITULAR",
-            jugador
+            type: "REMOVE_HEADLINE",
+            player
         })
     }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Titulares);
+export default connect(mapStateToProps, mapDispatchToProps)(Headlines);
